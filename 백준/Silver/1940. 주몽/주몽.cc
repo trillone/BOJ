@@ -23,7 +23,7 @@ int main() {
         found = false;
         in = -1;
 
-        for (j=0; j<input.size(); j++){
+        for (j=i+1; j<input.size(); j++){
             if ((i != j) && (input[i] + input[j] == m)){
                 found = true;
                 in = j;
@@ -34,11 +34,7 @@ int main() {
         if (found){
             output++;
             input.erase(input.begin() + in);
-            if (i < in){
-                input.erase(input.begin() + i);
-            } else {
-                input.erase(input.begin() + i - 1);
-            }
+            input.erase(input.begin() + i);
             i--;
         }
     }
